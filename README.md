@@ -1,3 +1,19 @@
+# by josh
+## 修改內容
+- `2024/8/8` **增加command長度**
+## 指令
+```shell
+make
+docker build -f Dockerfile.release -t lisyaoran51/gocron . --no-cache --platform=linux/amd64
+docker login
+docker push lisyaoran51/gocron
+docker run --name gocron-dev-josh -v /data/gocron:/app/conf -p 5920:5920 -d lisyaoran51/gocron
+```
+## 錯誤
+```
+exec /app/gocron: exec format error
+```
+
 # gocron - 定时任务管理系统
 [![Downloads](https://img.shields.io/github/downloads/ouqiang/gocron/total.svg)](https://github.com/ouqiang/gocron/releases)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/ouqiang/gocron/blob/master/LICENSE)
